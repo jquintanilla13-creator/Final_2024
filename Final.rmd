@@ -43,6 +43,20 @@ This bar plot displays the number of infected and non-infected male participants
 
 ## Females
 
+```{r}
+females <- FinalData %>% filter(sex == "F")
+
+ggplot(females, aes(x = treatment, fill = infected)) +
+geom_bar(position = "dodge") +
+labs(
+title = "Vaccine Efficacy Among Females",
+x = "Treatment Group",
+y = "Number of Participants",
+fill = "Infected"
+)
+```
+
+This bar plot compares infection status between treated and untreated female participants. Differences in the heights of the bars indicate variation in infection outcomes by treatment group. A smaller number of infected cases in the treated group would suggest that the vaccine reduces infection risk among females. For female participants, the comparison between treatment and control groups shows differences in infection outcomes. If the treated group exhibits fewer infections, this provides evidence that the vaccine is effective in reducing infection rates among females. The strength of this conclusion depends on the statistical significance of the results.
 
 ## LGBTQ
 
