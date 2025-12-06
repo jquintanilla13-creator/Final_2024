@@ -26,6 +26,20 @@ A new  preventative vaccine (covid921) is under test in clinical trials. Given t
 
 ## Males
 
+```{r}
+males <- FinalData %>% filter(sex == "M")
+
+ggplot(males, aes(x = treatment, fill = infected)) +
+geom_bar(position = "dodge") +
+labs(
+title = "Vaccine Efficacy Among Males",
+x = "Treatment Group",
+y = "Number of Participants",
+fill = "Infected"
+)
+```
+
+This bar plot displays the number of infected and non-infected male participants in the treatment and control groups. The comparison highlights differences in infection outcomes between males who received the vaccine and those who did not. A lower number of infections in the treatment group would be consistent with evidence of vaccine efficacy among male participants. Among male participants, infection status differs between the treatment and control groups. A lower proportion of infected individuals in the treatment group would suggest that the vaccine is effective for males. Statistical testing is used to determine whether this observed difference is statistically significant.
 
 ## Females
 
