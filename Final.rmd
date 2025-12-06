@@ -78,7 +78,22 @@ ggplot(lgbtq, aes(x = treatment, fill = infected)) +
 
 This bar plot displays the number of infected and non-infected participants who identify as gay across treatment and control groups. The figure allows for a visual comparison of infection outcomes within the LGBTQ subgroup. A lower number of infected individuals in the treatment group would suggest that the vaccine is effective in reducing infection risk among LGBTQ participants, though interpretation may be influenced by subgroup sample size. In this analysis, LGBTQ participants are defined as individuals who identify as gay, while straight-identifying participants are excluded from this subgroup.
 
-## Druggies
+## Drug Users
 
+```{r}
+drug_users <- FinalData %>% filter(DrugUser == "yes")
+
+ggplot(drug_users, aes(x = treatment, fill = infected)) +
+geom_bar(position = "dodge") +
+labs(
+title = "Vaccine Efficacy Among Drug Users",
+x = "Treatment Group",
+y = "Number of Participants",
+fill = "Infected"
+)
+
+```
+
+This bar plot illustrates infection status among participants who report drug use, separated by treatment group. By comparing infection counts between vaccinated and unvaccinated individuals, the plot assesses whether the vaccine appears to reduce infections in this higher-risk population. Among participants who report drug use, the treatment group is evaluated relative to the control group for differences in infection status. Evidence of lower infection rates among treated individuals would suggest vaccine effectiveness within this higher-risk subgroup.
 
 # Overall Results and Conclusions
